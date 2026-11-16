@@ -1,0 +1,26 @@
+extends layout
+
+block title
+  | #{title}
+
+block content
+  h2= title
+
+  //- Форма додавання нової задачі (відправляється через Fetch API у main.js)
+  form#task-form(novalidate)
+    input#title-input(type="text" name="title" placeholder="Введіть назву нової задачі")
+    button(type="submit") Додати
+
+  if tasks.length === 0
+    p#empty Список справ порожній.
+
+  ul#task-list
+    each task in tasks
+      li(data-id=task.id class=(task.completed ? 'completed' : ''))
+        span.title #{task.id}. #{task.title}
+        span.badge Виконано
+        button.btn.toggle(type="button") Змінити статус
+        button.btn.remove(type="button") Видалити
+
+block scripts
+  script(src="/main.js")

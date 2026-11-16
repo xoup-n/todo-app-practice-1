@@ -1,0 +1,17 @@
+{
+  "name": "todo-app-practice",
+  "version": "1.0.0",
+  "description": "ПЗ5: To-Do List на Express.js та Pug",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "pug": "^3.0.3",
+    "joi": "^17.13.3"
+  }
+}
